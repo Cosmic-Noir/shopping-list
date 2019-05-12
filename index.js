@@ -42,11 +42,19 @@ $(function() {
     // Write code that uses "check" button to toggle between classes - MAY need to use .closest() which will target the closes ANCESTOR of the selected element in the DOM tree. 
     $(".shopping-item-toggle").click(event => {
         // $(".shopping-item-toggle").closest("span").toggleClass(".shopping-item__checked");
-        let selectedSpan = $(this).closest(".shopping-item");
-        console.log(selectedSpan);
-        $(selectedSpan).addClass(".shopping-item__checked");
+
+        // $(this).closest(".shopping-item").css({"background": "blue"}); // Does not work
+
+        // let selectedSpan = $(".shopping-item-toggle").closest(".shopping-item"); // Not selecting the correct element. 
+        // console.log(selectedSpan); // Returns 4 objects?
+
+        // selectedSpan.toggleClass(".shopping-item__checked"); // Not working
+        // selectedSpan.fadeToggle(); // Not working
+        // selectedSpan.addClass(".shopping-item__checked"); // Not working.
+
         // $(".shopping-item-toggle").css({"background": "blue"}) // Works, when clicked, so function is working. 
-        $(selectedSpan).css({"background": "chocolate"});
+
+        // $(selectedSpan).css({"background": "chocolate"}); // Not working
     })
     ;
 
