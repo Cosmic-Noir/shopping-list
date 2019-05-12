@@ -1,13 +1,11 @@
 // Need to link jQuery using "CDN-hosted" version
-// App will: "add item" button will take INPUT and ADD item to list,
-// Must also "add item" when RETURN is keyed (for accessibility)
+// App will: "add item" button will take INPUT and ADD item to ul,
 // "check" button should TOGGLE item to be be crossed or not
 // "delete" button will REMOVE item from list
-// Must use "this" to reference event object and use "event delegation" (belive this is referencing using parent container to watch for events so that this will include items later added to the list)
-// Do Not alter index.html or index.css except for adding links.
-// Use - .submit(), preventDefault(), toggleClass(), and closest().
+// Must use "this" to reference event object and use "event delegation" 
 
-// Per CSS style sheet - .shopping-item__checked - class will apply strikethrough, so we really need to just toggle this class off and on with toggleClass() with the "check" button. 
+
+// Per CSS style sheet - .shopping-item__checked - class will apply strikethrough, use with toggleClass() with the "check" button. 
 
 // .submit() and preventDefault() will target the form and stop default action of submitting. 
 
