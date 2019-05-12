@@ -37,12 +37,15 @@ $(function() {
       </li>`);
         // Above code works!
     })
+
+
     // Write code that uses "check" button to toggle between classes - MAY need to use .closest() which will target the closes ANCESTOR of the selected element in the DOM tree. 
     $(".shopping-item-toggle").click(function(event) {
       let selected = $(this).parent().prev();
       console.log(selected); 
       selected.css({"color": "red"}); // proves we are selecting correct element. 
-      selected.addClass(".shopping-item__checked"); // Still not working.
+      // selected.addClass(".shopping-item__checked"); // Not Working
+      // selected.toggleClass(".shopping-item__checked"); // Not working
     });
 
 
