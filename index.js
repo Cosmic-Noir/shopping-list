@@ -26,7 +26,22 @@ $(function() {
         event.preventDefault();
         let userText = $("#shopping-list-entry").val();
         console.log(userText); // correctly stores value of input field.
-        $(".shopping-list").append(`<li>${userText}</li>`);
-
+        $(".shopping-list").append(`<li>
+        <span class="shopping-item">${userText}</span>
+        <div class="shopping-item-controls">
+          <button class="shopping-item-toggle">
+            <span class="button-label">check</span>
+          </button>
+          <button class="shopping-item-delete">
+            <span class="button-label">delete</span>
+          </button>
+        </div>
+      </li>`);
+        // Above code works!
     })
+    // Write code that uses "check" button to toggle between classes - MAY need to use .closest() which will target the closes ANCESTOR of the selected element in the DOM tree. 
+    $(".shopping-item-toggle").click(event => {
+        $(".shopping-item-toggle").closest("span").toggleClass(".shopping-item__checked");
+    })
+
 })
