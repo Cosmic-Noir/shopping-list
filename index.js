@@ -48,9 +48,14 @@ $(function() {
     });
 
 
-    // Write code to remove items from the list when delete button is clicked. This is going to have to work on parent container though, 
-    $(".shopping-item-delete").click(function(event) {
-      this.closest("li").remove(); // W ! but not on new li items.
-    });
+    // Write code to remove items from the list when delete button is clicked. This is going to have to work on parent container though.
+
+    // $(".shopping-item-delete").click(function(event) {
+      // this.closest("li").remove(); // W ! but not on new li items.
+    // });
+
+    $(".shopping-list").on("click", ".shopping-item-delete", function(event) {
+      this.closest("li").remove();
+    }); // W ! 
 
 })
