@@ -40,33 +40,17 @@ $(function() {
         // Above code works!
     })
     // Write code that uses "check" button to toggle between classes - MAY need to use .closest() which will target the closes ANCESTOR of the selected element in the DOM tree. 
-    $(".shopping-item-toggle").click(event => {
-        //  $(".shopping-item-toggle").closest("span").toggleClass(".shopping-item__checked"); // DNW - should select nearest matching ANCESTOR, not descendant, so should work?
-        $(event).closest("span").css({"background": "blue"}); // DNW
-      
-
-        // $(this).closest(".shopping-item").css({"background": "blue"}); // DNW
-
-        // let selectedSpan = $(".shopping-item-toggle").closest(".shopping-item"); // Via class DNW 
-        // console.log(selectedSpan); // Returns 4 objects?
-
-        //  let selectedSpan = $(".shopping-item-toggle").closest("span"); // Via element DNW
-
-        //  console.log(selectedSpan); // Increases with list # items, so is selecting all, looks like buttons. 
-
-        //  selectedSpan.toggleClass(".shopping-item__checked"); // DNW
-        // $(selectedSpan).toggleClass(".shopping-item__checked"); // DNW
-        // selectedSpan.fadeToggle(); // DNW
-        //  selectedSpan.addClass(".shopping-item__checked"); // DNW
-
-        //  $(".shopping-item-toggle").css({"background": "blue"}) // W - when clicked
-
-        //  $(this).css({"background": "blue"}) // DNW
-
-        //  $(selectedSpan).css({"background": "chocolate"}); // DNW
-
-        
+    $(".shopping-item-toggle").click(function(event) {
+      let selected = $(this).parent().prev();
+      console.log(selected); 
+      selected.css({"color": "red"}); // proves we are selecting correct element. 
+      selected.addClass(".shopping-item__checked"); // Still not working.
     });
 
+
+    // Write code to remove items from the list when delete button is clicked. This is going to have to work on parent container though, 
+    $(".shopping-item-delete").click(function(event) {
+      this.closest("li").remove(); // W ! but not on new li items.
+    });
 
 })
