@@ -11,7 +11,7 @@
 
 // .submit() and preventDefault() will target the form and stop default action of submitting. 
 
-// .closest() - "given a jQuery object, this method searches through these elements and their ancestors in the DOM and constructs a new jQuery object from the matching elements". Similar to .parents() as they both traverse up the DOM tree - unclear what this will be used for? 
+// .closest() - "given a jQuery object, this method searches through these elements and their ancestors in the DOM and constructs a new jQuery object from the matching elements". Similar to .parents() as they both traverse up the DOM tree - to find and manipulate the correct span. 
 
 // Per index.html, should be adding li items to ul, which should  match already existing li format. 
 
@@ -41,7 +41,14 @@ $(function() {
     })
     // Write code that uses "check" button to toggle between classes - MAY need to use .closest() which will target the closes ANCESTOR of the selected element in the DOM tree. 
     $(".shopping-item-toggle").click(event => {
-        $(".shopping-item-toggle").closest("span").toggleClass(".shopping-item__checked");
+        // $(".shopping-item-toggle").closest("span").toggleClass(".shopping-item__checked");
+        let selectedSpan = $(this).closest(".shopping-item");
+        console.log(selectedSpan);
+        $(selectedSpan).addClass(".shopping-item__checked");
+        // $(".shopping-item-toggle").css({"background": "blue"}) // Works, when clicked, so function is working. 
+        $(selectedSpan).css({"background": "chocolate"});
     })
+    ;
+
 
 })
