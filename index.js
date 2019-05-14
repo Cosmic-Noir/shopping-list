@@ -24,6 +24,9 @@ $(function() {
         event.preventDefault();
         let userText = $("#shopping-list-entry").val();
         console.log(userText); // correctly stores value of input field.
+
+        $('#shopping-list-entry').val(''); // Should clear the field after submission
+
         $(".shopping-list").append(`<li>
         <span class="shopping-item">${userText}</span>
         <div class="shopping-item-controls">
